@@ -1,0 +1,175 @@
+---
+title: "PeerGroup2_PeerCommentary_feiyaw_01"
+author: "Feiya Wang"
+date: "9/15/2019"
+output: html_document
+---
+#Module 4
+#peer comment: overall really great job, very organized and easy to follow, as well as good annotations.You don't need to chnage anything. 
+#Challenge 1.1
+```{r}
+
+x<-"Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed."
+#make the first line as a string variable
+
+x1<-gsub("[[:punct:]]","",x)
+#take the punction out of the string
+
+x2<-stringr::str_split(x1," ",simplify = FALSE)
+#seperate the string by space to get the word
+
+v<-unlist(x2)
+#x2 is a list now, make x2 into a vector use unlist()
+v
+#first question finish
+```
+#Challenge 1.2
+```{r}
+
+x<-"Stately, plump Buck Mulligan came from the stairhead, bearing a bowl of lather on which a mirror and a razor lay crossed."
+#make the first line as a string variable
+
+x1<-gsub("[[:punct:]]","",x)
+#take the punction out of the string
+
+x2<-stringr::str_split(x1," ",simplify = FALSE)
+#seperate the string by space to get the word
+
+v<-unlist(x2)
+#x2 is a list now, make x2 into a vector use unlist()
+#first question finish
+
+n<-length(v)
+#know the last index of the v
+
+v[seq(from = 1, to = n, by = 3)]
+#take every third element from the vector
+#second question
+
+```
+#Challenge 2.1
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
+#example matrix
+
+x<-c(m[,2],m[,3],m[,6])
+#extract 2nd, 3rd,6th column
+x
+#show x
+
+```
+#Challenge 2.2
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
+#example matrix
+
+x<-c(m[6,],m[8,])
+#extract 6th, 8th row
+x
+#show x 
+
+```
+#Challenge 2.3
+```{r}
+m <- matrix(data=1:80,nrow=8,ncol=10,byrow=FALSE)
+#example matrix
+
+x<-c(m[2,2]:m[6,9])
+#extract from row 2, column 2 to row 6, column 9 
+x
+#show x
+
+```
+#Challange 3.1
+```{r}
+a <- array(data=400:1, dim=c(5,5,4,4))
+#build a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)
+
+```
+#Challenge 3.2
+a[1, 1, 1, 2]: 300
+
+a[2, 3, 2, ]: a row of [1] 364 264 164  64
+     
+a[1:5, 1:5, 3, 3]:a list of 
+    [,1] [,2] [,3] [,4] [,5]
+[1,]  150  145  140  135  130
+[2,]  149  144  139  134  129
+[3,]  148  143  138  133  128
+[4,]  147  142  137  132  127
+[5,]  146  141  136  131  126
+
+#Challenge 4
+```{r}
+platyrrhini<-c("Cebidae","Atelidae","Pitheciidae")
+Catarrhini<-c("Cercopithecidae","Hylobatidae","Hominidae")
+# create vector for two lowest list.
+
+Anthropoidea<-list(platyrrhini,Catarrhini)
+names(Anthropoidea)<-c("platyrrhini","Catarrhini")
+#combine the previous two list into Anthropoidea catalog)
+
+Tarsioidea<-c("Tarsiidae")
+#create the other list 
+
+Haplorhini<-list(Anthropoidea,Tarsioidea)
+names(Haplorhini)<-c("Anthropoidea","Tarsioidea")
+#combine those two list and name the row 
+
+#similai thought for the rest ofproblem.
+
+Lorisoidea<-c("Lorisidae","Galagidae")
+Lemuroidea<-c("Cheirogaleidae","Lepilemuridae","Indriidae","Lemuridae","Daubentoniidae")
+
+Strepsirhini<-list(Lorisoidea,Lemuroidea)
+names(Strepsirhini)<-c("Lorisoidea","Lemuroidea")
+
+Primates<-list(Haplorhini,Strepsirhini)
+names(Primates)<-c("Haplorhini","Strepsirhini")
+
+Primates
+```
+
+#Challage 5
+
+```{r}
+ m <- matrix(c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2),nrow=5,ncol=3,byrow=FALSE)
+#create matrix
+
+df<-as.data.frame(m)
+#convert to data frame
+
+df[,2]=as.logical(df[,2])
+#change the colume 2 into logical value
+
+df[,3]=as.factor(df[,3])
+#change the colume 3 into factor
+
+str(df)
+#show the data structure 
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
