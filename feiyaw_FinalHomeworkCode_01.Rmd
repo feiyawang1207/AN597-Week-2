@@ -150,6 +150,15 @@ str(df)
 
 ```
 
+#five Challenge I meet when i do the coding.
+1. it take me 1hour to get familliar with the R language's function and how to run teh code.
+2. for the first challenge question, I feel unclear about how to split the sentence as well as use function from package that we install.
+
+Since I have coding experience with other languages like python. I know about the algorithm and logic. I also get familir with how to write the annotation after step. So i feel the first week is not really challenge for me in other parts.  
+
+I do learn from my peer Commentary group. I understand the code better when i get to review all the function with my group.
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
